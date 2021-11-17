@@ -1,23 +1,27 @@
 import {
-  Route,
-  Switch
+  BrowserRouter as Router,
+  Switch,
+  Route
 } from 'react-router-dom'
 
+
 import './App.css'
-import { Home, Resume, Page404 } from './pages'
+import Home from './pages/Home'
 
 
 const App = () => {
 
   return (
-    <div id="main">
+
+    <Router>
       <Switch>
         <Route exact path='/' >
           <Home />
         </Route>
-        <Page404 />
+
       </Switch>
-    </div>
+    </Router>
+
   )
 }
 
