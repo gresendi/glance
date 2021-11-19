@@ -1,8 +1,8 @@
  .box {
    width: 100%;
    min-height: 100vh;
-   background-color: aquamarine;
-   justify-content: center;
+   background: url('https://momentum.photos/img/a3cc15a1-fd22-4112-b020-3612dace1d00.jpg?momo_cache_bg_uuid=644b22b7-4fdd-42db-9e74-2f0db506508b');
+  justify-content: center;
  }
 
  .top-row {
@@ -17,7 +17,6 @@
  }
 
  .center {
-   
    width: 100%;
    min-height: 40vh;
    justify-content: center;
