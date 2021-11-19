@@ -4,7 +4,24 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './Home.css'
+import moment from 'moment'
+import { useState, useEffect } from 'react';
 const Home = () => {
+  const [clock, setClock] = useState([]);
+
+
+  
+  useEffect(() => {
+    
+    setClock(moment().format('LT'))
+    setInterval(update, 1000)
+  });
+
+  const update = () =>{
+    setClock(moment().format('LT'))
+    console.log('updating')
+  }
+
 
 
   return (
@@ -25,7 +42,7 @@ const Home = () => {
       </Row>
       <Row className='center'>
         
-        <Col md="auto">Clock goes here</Col>
+        <Col md="auto">{clock}</Col>
       </Row>
       <Row className='bottom-center'>
         bottom-center
