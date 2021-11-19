@@ -1,0 +1,37 @@
+ .box {
+   width: 100%;
+   min-height: 100vh;
+   background-color: aquamarine;
+   justify-content: center;
+ }
+
+ .top-row {
+   width: 100%;
+   min-height: 10vh;
+ }
+
+ .top-center {
+   width: 100%;
+   min-height: 20vh;
+   justify-content: center;
+ }
+
+ .center {
+   
+   width: 100%;
+   min-height: 40vh;
+   justify-content: center;
+   align-content: center;
+ }
+
+ .bottom-center {
+   width: 100%;
+   min-height: 20vh;
+   justify-content: center;
+ }
+
+ .bottom-row {
+   width: 100%;
+   min-height: 10vh;
+   justify-content: center;
+ }
