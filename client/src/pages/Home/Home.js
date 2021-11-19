@@ -1,26 +1,16 @@
-
-import './Home.css'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import './Home.css'
-import moment from 'moment'
 import { useState, useEffect } from 'react';
-const Home = () => {
-  const [clock, setClock] = useState([]);
+import Clock from '../../components/Clock'
+import Greeting from '../../components/Greeting'
+import Weather from '../../components/Weather'
+import './Home.css'
 
 
+const Home = () => 
+{
   
-  useEffect(() => {
-    
-    setClock(moment().format('LT'))
-    setInterval(update, 1000)
-  });
-
-  const update = () =>{
-    setClock(moment().format('LT'))
-    console.log('updating')
-  }
 
 
 
@@ -34,7 +24,7 @@ const Home = () => {
           middle-top
         </Col>
         <Col sm={4}>
-          right-top
+          <Weather></Weather>
         </Col>
       </Row>
       <Row className='top-center'>
@@ -42,7 +32,11 @@ const Home = () => {
       </Row>
       <Row className='center'>
         
-        <Col md="auto">{clock}</Col>
+        <Clock></Clock>
+        <Greeting
+        name = 'Gilberto'
+        ></Greeting>
+        
       </Row>
       <Row className='bottom-center'>
         bottom-center
