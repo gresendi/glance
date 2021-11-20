@@ -1,7 +1,7 @@
 {
-  "name": "job-rejector",
+  "name": "glance",
   "version": "1.0.0",
-  "description": "App that allows HR departments to better communicate rejections with candidates",
+  "description": "App that provides you a glance of your productivity.",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sequint/job-rejector.git"
+    "url": "git+https://github.com/gresendi/glance.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sequint/job-rejector/issues"
+    "url": "https://github.com/gresendi/glance/issues"
   },
-  "homepage": "https://github.com/sequint/job-rejector#readme",
+  "homepage": "https://github.com/gresendi/glance#readme",
   "dependencies": {
     "concurrently": "^6.3.0",
     "dotenv": "^10.0.0",
@@ -35,5 +35,6 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0"
-  }
+  },
+  "devDependencies": {}
 }
