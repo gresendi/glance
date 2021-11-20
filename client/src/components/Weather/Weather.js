@@ -34,8 +34,14 @@ const Weather = () => {
 
   return (
     <>
+    
       <h1 className = 'weather'>Weather</h1>
-      <div className="card-body">
+      
+      <div >
+        <img
+          className='weather'
+          src={card ? `http://openweathermap.org/img/w/${card.weather[0].icon}.png` : 'https://static.thenounproject.com/png/1103191-200.png'}
+          alt="Weather icon"></img>
 
         <p className=" weather">Temperature: {card?card.main.temp:<></> }F
         </p>
