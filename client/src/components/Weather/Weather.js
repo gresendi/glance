@@ -38,7 +38,7 @@ const Weather = () => {
 
         <p className="card-text">Temperature: {card?card.main.temp:<></> }F
         </p>
-        <p className="card-text">Humidity: { }% </p>
+        <p className="card-text">Humidity: {card ? card.main.humidity : <></> }% </p>
 
       </div>
 
