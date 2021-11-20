@@ -20,6 +20,7 @@ const Weather = () => {
 
 
   const weather = () => {
+    console.log('getting weather info')
     WeatherApi.getLocalWeather(city)
       .then((res) => {
         setCard(res)
