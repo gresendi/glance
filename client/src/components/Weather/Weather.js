@@ -33,12 +33,12 @@ const Weather = () => {
 
   return (
     <>
-      <h1>Weather</h1>
+      <h1 className = 'weather'>Weather</h1>
       <div className="card-body">
 
-        <p className="card-text">Temperature: {card?card.main.temp:<></> }F
+        <p className=" weather">Temperature: {card?card.main.temp:<></> }F
         </p>
-        <p className="card-text">Humidity: {card ? card.main.humidity : <></> }% </p>
+        <p className="card-text weather">Humidity: {card ? card.main.humidity : <></> }% </p>
 
       </div>
 

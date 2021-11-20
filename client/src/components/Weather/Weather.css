@@ -1,7 +1,9 @@
-h1 {
+
+
+.weather {
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  justify-content: end;
+  text-align: end;
 }

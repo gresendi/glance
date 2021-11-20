@@ -6,18 +6,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 const Clock = () =>{
 
-  const [clock, setClock] = useState([]);
+  const [clock, setClock] = useState(moment().format('LT'));
 
   useEffect(() => {
+    setInterval(() => {
+      setClock(moment().format('LT'));
+      console.log('getting time')
+    }, 30000);
+  }, []);
 
-    setClock(moment().format('LT'))
-    setInterval(update, 6000)
-  });
 
-  const update = () => {
-    setClock(moment().format('LT'))
-    console.log('updating')
-  }
 
 
   return (

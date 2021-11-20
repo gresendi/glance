@@ -24,7 +24,7 @@ const Home = () =>
           middle-top
         </Col>
         <Col sm={4}>
-          <Weather></Weather>
+          {/* <Weather></Weather> */}
         </Col>
       </Row>
       <Row className='top-center'>
