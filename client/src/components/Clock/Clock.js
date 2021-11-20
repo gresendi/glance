@@ -11,8 +11,8 @@ const Clock = () =>{
   useEffect(() => {
     setInterval(() => {
       setClock(moment().format('LT'));
-      console.log('getting time')
-    }, 30000);
+      
+    }, 1000);
   }, []);
 
 
