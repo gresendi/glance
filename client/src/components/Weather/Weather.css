@@ -1,9 +1,23 @@
-
-
 .weather {
   color: white;
+  margin-bottom: 0;
+}
+
+.weatherIcon {
+  display: flex;
+  max-width: 100px;
+  margin-top: 0;;
+}
+
+.weatherHeader {
+  margin-bottom: 0;
+  padding-bottom: 0;;
+}
+
+.weatherContainer {
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  text-align: end;
+  justify-content: right;
+  text-align: right;
+  align-items: flex-end;
 }

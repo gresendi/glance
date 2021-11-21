@@ -3,6 +3,7 @@ import axios from 'axios'
 import WeatherApi from '../../utils/WeatherApi'
 import { useState, useEffect } from 'react'
 import moment from 'moment'
+import Image from  'react-bootstrap/Image'
 
 const Weather = () => {
 
@@ -34,22 +35,17 @@ const Weather = () => {
 
   return (
     <>
-    
-      <h1 className = 'weather'>Weather</h1>
-      
-      <div >
-        <img
-          className='weather'
-          src={card ? `http://openweathermap.org/img/w/${card.weather[0].icon}.png` : 'https://static.thenounproject.com/png/1103191-200.png'}
-          alt="Weather icon"></img>
 
-        <p className=" weather">Temperature: {card?card.main.temp:<></> }F
-        </p>
-        <p className="card-text weather">Humidity: {card ? card.main.humidity : <></> }% </p>
-
-      </div>
+        <div className ='weatherContainer'>
+        <h1 className='weatherHeader'>{city}</h1>
+        <Image className="weatherIcon weather" src={card ? `http://openweathermap.org/img/w/${card.weather[0].icon}.png` : 'https://static.thenounproject.com/png/1103191-200.png'} />
+          <p className=" weather">Temperature: {card ? card.main.temp : <></>}F
+          </p>
+          <p className="weather">Humidity: {card ? card.main.humidity : <></>}% </p>
+        </div>
 
     </>
+    
 
   )
 }
