@@ -1,0 +1,17 @@
+.linkContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.links {
+    background: transparent!;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: transparent;
+   border-color:transparent;
+}

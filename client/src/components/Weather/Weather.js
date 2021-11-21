@@ -10,7 +10,7 @@ const Weather = () => {
   const [card, setCard] = useState(false)
 
 
-  let city = 'Anaheim'
+  let city = 'Big Bear'
   useEffect(() => {
 
 
