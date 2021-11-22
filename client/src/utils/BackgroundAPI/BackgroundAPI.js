@@ -22,7 +22,8 @@ const BackgroundAPI = {
       count: 1,
     })
     .then(response =>{
-      console.log(response)
+      return response
+      
     })
   }
 
