@@ -9,7 +9,7 @@ import LinksDropdown from '../../components/LinksDropdown'
 import BackgroundAPI from '../../utils/BackgroundAPI'
 import PhotoCard from '../../components/PhotoCard';
 import './Home.css'
-
+import Quote from '../../components/Quote'
 
 
 const Home = () => 
@@ -26,7 +26,7 @@ const Home = () =>
   const getBackground = () =>{
     //api call to get background
     // BackgroundAPI.getBackground()   
-    let url = 'https://images.unsplash.com/photo-1417325384643-aac51acc9e5d?q=75&fm=jpg'
+    let url = 'https://momentum.photos/img/3c7c426c-4763-4452-8fd1-6d6d8eafde76.jpg?momo_cache_bg_uuid=29f19086-4db4-45eb-b314-bed96e63394f'
     setBackground({ ...background, url: url, backgroundImage: "url(" +  url  + ")",name:'John Doe',location:'Woods'})
 
     console.log(background.url)
@@ -76,10 +76,11 @@ const Home = () =>
         
       </Row>
       <Row className='bottom-center'>
-        bottom-center
+        <Quote
+          quote='quote'></Quote>
       </Row>
       <Row className='bottom-row fixed-bottom'>
-        <Col sm={4}>
+        <Col >
           {/* settings */}
           {/* photo info/ next image */}
           <PhotoCard
@@ -87,10 +88,10 @@ const Home = () =>
           location= {background.location}
           ></PhotoCard>
         </Col>
-        <Col sm={4}>
-          { }
-        </Col>
-        <Col sm={4}>
+       
+         
+        
+        <Col >
           
         </Col>
       </Row>

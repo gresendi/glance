@@ -1,0 +1,11 @@
+.quote {
+  font-variant: small-caps;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  text-align:end;
+ 
+}
+
