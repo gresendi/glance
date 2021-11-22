@@ -53,7 +53,7 @@ const Home = () =>
   return (
     <Container fluid className='box'
     style={sectionStyle}>
-      <Row className='top-row'>
+      <Row className='top-row fixed-top'>
         <Col sm={4}>
           <LinksDropdown></LinksDropdown>
         </Col>
@@ -78,7 +78,7 @@ const Home = () =>
       <Row className='bottom-center'>
         bottom-center
       </Row>
-      <Row className='bottom-row'>
+      <Row className='bottom-row fixed-bottom'>
         <Col sm={4}>
           {/* settings */}
           {/* photo info/ next image */}
