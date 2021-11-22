@@ -6,6 +6,7 @@ import Clock from '../../components/Clock'
 import Greeting from '../../components/Greeting'
 import Weather from '../../components/Weather'
 import LinksDropdown from '../../components/LinksDropdown'
+import BackgroundAPI from '../../utils/BackgroundAPI'
 import './Home.css'
 
 
@@ -23,7 +24,7 @@ const Home = () =>
           <LinksDropdown></LinksDropdown>
         </Col>
         <Col sm={4}>
-          middle-top
+          {BackgroundAPI.getBackground()}
         </Col>
         <Col sm={4}>
           <Weather></Weather>
