@@ -18,8 +18,8 @@ const PhotoCard = ({name, location}) => {
     
        
         <Col className='bottomLeft' sm={4}>
-        <p className='name'>{name}</p>
-        <p className='name'>{location}</p>
+        <p className='name'>Photo by <a href='https://google.com'>{name}</a></p>
+      <p className='name'> <a href='https://google.com'>Unsplash</a></p>
         </Col>
        
       
