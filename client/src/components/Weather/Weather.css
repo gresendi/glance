@@ -6,12 +6,14 @@
 .weatherIcon {
   display: flex;
   max-width: 100px;
-  margin-top: 0;;
+  margin-top: 0;
+  ;
 }
 
 .weatherHeader {
   margin-bottom: 0;
-  padding-bottom: 0;;
+  padding-bottom: 0;
+  ;
 }
 
 .weatherContainer {
@@ -20,4 +22,10 @@
   justify-content: right;
   text-align: right;
   align-items: flex-end;
+}
+
+.cityContainer {
+  background-color: transparent;
+  text-align:end;
+  color: black;
 }
