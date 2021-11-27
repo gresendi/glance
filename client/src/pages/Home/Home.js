@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Stack from 'react-bootstrap/Stack'
 import { useState, useEffect } from 'react';
 import Clock from '../../components/Clock'
 import Greeting from '../../components/Greeting'
@@ -76,9 +77,16 @@ const Home = () =>
         ></Greeting>
         
       </Row>
-      <Row className='bottom-center'>
-        <Quote
-          quote='quote'></Quote>
+      <Row className='bottom-center  fixed-bottom'>
+        <Stack
+        direction='vertical'
+        >
+          <Quote
+            quote='quote'></Quote>
+        </Stack>
+        
+        
+       
       </Row>
       <Row className='bottom-row fixed-bottom'>
         <Col >

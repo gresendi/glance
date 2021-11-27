@@ -34,6 +34,8 @@
    width: 100%;
    min-height: 20vh;
    justify-content: center;
+   padding: 2rem;
+   margin-bottom: 1rem;
    
  }
 
@@ -41,4 +43,5 @@
    width: 100%;
    min-height: 10vh;
    justify-content: center;
+   
  }
