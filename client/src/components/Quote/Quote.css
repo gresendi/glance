@@ -1,7 +1,6 @@
 .quote {
   font-variant:normal;
-  color: white;
-  
+  color: white; 
   display: flex;
   flex-direction: column;
   justify-content:space-around;

@@ -20,7 +20,7 @@ const Home = () =>
     width: "100%",
     height: "400px",
     backgroundImage: '',
-    name:'',
+    name:'Gilberto',
     location:''
   })
  
@@ -28,6 +28,7 @@ const Home = () =>
     //api call to get background
        
     let backgroundTemp = BackgroundAPI.getBackground()
+    console.log(backgroundTemp)
     let url = 'https://momentum.photos/img/3c7c426c-4763-4452-8fd1-6d6d8eafde76.jpg?momo_cache_bg_uuid=29f19086-4db4-45eb-b314-bed96e63394f'
     setBackground({ ...background, url: url, backgroundImage: "url(" +  url  + ")",name:'John Doe',location:'Woods'})
 
@@ -37,7 +38,7 @@ const Home = () =>
   }
 
   useEffect(() => {
-    // getBackground()
+    getBackground()
 
   }, [background.url])
 
