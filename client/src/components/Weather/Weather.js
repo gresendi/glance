@@ -1,7 +1,6 @@
 import './Weather.css'
 import WeatherApi from '../../utils/WeatherApi'
 import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
@@ -85,7 +84,7 @@ const handleChange =(e)=>{
             </Popover>
           }
         >
-          <h1>{name}</h1>
+          <h1 className='cityTitle'>{name}</h1>
         </OverlayTrigger>
 
 

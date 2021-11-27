@@ -26,6 +26,11 @@
 
 .cityContainer {
   background-color: transparent;
-  text-align:center;
+  text-align: center;
   color: black;
+}
+
+.cityTitle{
+  font-size: 15pt;
+  margin-top: .5rem;
 }
