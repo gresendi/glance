@@ -1,8 +1,7 @@
 import './Weather.css'
-import axios from 'axios'
 import WeatherApi from '../../utils/WeatherApi'
 import { useState, useEffect } from 'react'
-import moment from 'moment'
+import Button from 'react-bootstrap/Button'
 import Image from 'react-bootstrap/Image'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
@@ -10,15 +9,16 @@ import Popover from 'react-bootstrap/Popover'
 const Weather = () => {
 
   const [card, setCard] = useState(false)
-  let [city, setCity] = useState('Big Bear')
-  const [name, setName] = useState("Anaheim");
+  let [city, setCity] = useState(localStorage.getItem('city'))
+  const [name, setName] = useState(localStorage.getItem('city'));
   
   useEffect(() => {
 
 
     weather(city)
+    console.log("Search message inside useEffect: ", name);
 
-  }, [])
+  }, [name])
 
 
 
@@ -38,8 +38,17 @@ const Weather = () => {
     
     localStorage.setItem('city',name)
     
-
 }
+
+const handleChange =(e)=>{
+  e.persist()
+  let name = e.target.value
+  setName(name)
+  changeCity(name)
+  weather(name)
+  console.log(name)
+}
+
 
   return (
     <>
@@ -47,12 +56,15 @@ const Weather = () => {
       <div className='weatherContainer'>
         
         <OverlayTrigger
+          rootClose
+        target
           trigger="click"
           key= 'bottom'
           placement='bottom'
+             
           overlay={
             <Popover id={`popover-positioned'bottom`}>
-              <Popover.Header as="h3">{`Popover bottom`}</Popover.Header>
+              <Popover.Header as="h3">{`Change City`}</Popover.Header>
               <Popover.Body>
                 <form>
 
@@ -61,16 +73,14 @@ const Weather = () => {
                     value={name}
                     className="cityContainer"
                     onChange={(e) => {
-                      e.preventDefault()
-                      setName(e.target.value)
-                      changeCity(name)
-                      weather(name)
-                      console.log(name)
-
+                      handleChange(e)
+                    
                     }}
                   />
+                  
 
                 </form>
+                
               </Popover.Body>
             </Popover>
           }
