@@ -24,7 +24,7 @@ const Clock = () =>{
       className='clock'
     >
       {clock}
-      <FontAwesomeIcon icon={faCoffee}/>
+      {/* <FontAwesomeIcon icon={faCoffee}/> */}
       
 
 

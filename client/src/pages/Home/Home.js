@@ -98,12 +98,13 @@ const Home = () => {
       <Row className='top-center'>
 
       </Row>
-      <Row className='center'>
-
+      <Row className='center fl' >
+      <Col>
         <Clock></Clock>
         <Greeting
           name='Gilberto'
-        ></Greeting>
+          ></Greeting>
+          </Col>
 
       </Row>
       <Row className='bottom-center  fixed-bottom'>

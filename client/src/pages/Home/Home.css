@@ -33,15 +33,16 @@
  .bottom-center {
    width: 100%;
    min-height: 20vh;
-   justify-content: center;
+   position: absolute;
+   bottom: 0;
    padding: 2rem;
    margin-bottom: 1rem;
-   
+
  }
 
  .bottom-row {
    width: 100%;
    min-height: 10vh;
    justify-content: center;
-   
+
  }
