@@ -8,7 +8,7 @@ import {
 import './App.css'
 import Home from './pages/Home'
 import Auth from './pages/Auth'
-
+import SignIn from './pages/SignIn'
 const App = () => {
 
   return (
@@ -22,7 +22,13 @@ const App = () => {
       </Switch>
       <Switch>
         <Route exact path='/' >
-          <Home />
+          <SignIn />
+        </Route>
+
+      </Switch>
+      <Switch>
+        <Route exact path='/auth' >
+          <Auth />
         </Route>
 
       </Switch>
