@@ -15,32 +15,13 @@ const BackgroundAPI = {
 
   getBackground: () => {
 
-    unsplash.photos.getRandom({
+    
+   return unsplash.photos.getRandom({
       featured: true,
       orientation: 'landscape',
       query: 'nature',
       count: 1,
-    })
-    .then(response =>{
-      console.log(response.response[0])
-      let name = response.response[0].user.name 
-      let userLink = response.response[0].user.links.html       
-      let backgroundUrls = (response.response[0].urls)
-      let backgroundData={
-        background:backgroundUrls,
-        unslpashLink: 'https://unsplash.com/?utm_source=your_app_name&utm_medium=referral',
-        userLink: userLink,
-        user: name,
-
-      }
-      console.log(backgroundData)
-
-
-      
-
-      return (backgroundData)
-      
-    })
+    }) 
   }
 
 

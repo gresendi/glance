@@ -11,40 +11,68 @@ import BackgroundAPI from '../../utils/BackgroundAPI'
 import PhotoCard from '../../components/PhotoCard';
 import './Home.css'
 import Quote from '../../components/Quote'
+import UserAPI from '../../utils/UserAPI';
 
-
-const Home = () => 
-{
+const Home = () => {
   const [background, setBackground] = useState({
     url: '',
+    userLink: '',
     width: "100%",
     height: "400px",
     backgroundImage: '',
-    name:'Gilberto',
-    location:''
+    name: 'Gilberto',
+    location: '',
+    unslpashLink: 'https://unsplash.com/?utm_source=glance&utm_medium=referral',
   })
- 
-  const getBackground = () =>{
-    //api call to get background
-       
-    let backgroundTemp = BackgroundAPI.getBackground()
-    console.log(backgroundTemp)
-    let url = 'https://momentum.photos/img/3c7c426c-4763-4452-8fd1-6d6d8eafde76.jpg?momo_cache_bg_uuid=29f19086-4db4-45eb-b314-bed96e63394f'
-    setBackground({ ...background, url: url, backgroundImage: "url(" +  url  + ")",name:'John Doe',location:'Woods'})
+  const [loaded, setLoaded] = useState(false)
+  const [user, setUser] = useState({})
 
-    console.log(background.url)
-    console.log(background.backgroundImage)
+
+  const getBackground = () => {
+    //api call to get background
+
+    let backgroundTemp = BackgroundAPI.getBackground()
+    backgroundTemp.then(response => {
+
+      let name = response.response[0].user.name
+      console.log(response.response[0].user.name)
+      let userLink = response.response[0].user.links.html
+      let backgroundUrls = (response.response[0].urls)
+      let backgroundData = {
+        background: backgroundUrls,
+
+        userLink: userLink,
+        user: name,
+
+      }
+      console.log(backgroundData)
+      let url = backgroundData.background.raw
+      setBackground({ ...background, url: url, backgroundImage: "url(" + url + ")", name: backgroundData.user, location: 'Woods', userLink: userLink })
+
+    })
+
+
+
 
   }
 
   useEffect(() => {
-    getBackground()
+    if (!loaded) {
+      getBackground()
+
+      setLoaded(true)
+      UserAPI.getUser()
+        .then(({ data }) => {
+          console.log(data)
+        })
+    }
+
 
   }, [background.url])
 
- 
+
   var sectionStyle = {
-    
+
     backgroundImage: background.backgroundImage,
     backgroundPosition: 'center',
     backgroundSize: 'cover',
@@ -55,54 +83,56 @@ const Home = () =>
 
   return (
     <Container fluid className='box'
-    style={sectionStyle}>
+      style={sectionStyle}>
       <Row className='top-row fixed-top'>
         <Col sm={4}>
           <LinksDropdown></LinksDropdown>
         </Col>
         <Col sm={4}>
-          {}
+          { }
         </Col>
         <Col sm={4}>
           <Weather></Weather>
         </Col>
       </Row>
       <Row className='top-center'>
-        
+
       </Row>
       <Row className='center'>
-        
+
         <Clock></Clock>
         <Greeting
-        name = 'Gilberto'
+          name='Gilberto'
         ></Greeting>
-        
+
       </Row>
       <Row className='bottom-center  fixed-bottom'>
         <Stack
-        direction='vertical'
+          direction='vertical'
         >
           <Quote
             quote='quote'></Quote>
         </Stack>
-        
-        
-       
+
+
+
       </Row>
       <Row className='bottom-row fixed-bottom'>
         <Col >
           {/* settings */}
           {/* photo info/ next image */}
           <PhotoCard
-          name={background.name}
-          location= {background.location}
+            name={background.name}
+            userLink={background.userLink}
+            unslpashLink={background.unslpashLink}
+            location={background.location}
           ></PhotoCard>
         </Col>
-       
-         
-        
+
+
+
         <Col >
-          
+
         </Col>
       </Row>
 

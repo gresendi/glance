@@ -12,6 +12,7 @@ const RegisterForm = () => {
     last_name: '',
     username: '',
     password: '',
+   
   })
   const [missingInput, setMissingInput] = useState({
     missingFirstName: false,
@@ -63,13 +64,13 @@ const RegisterForm = () => {
       userState.last_name !== '' &&
       userState.username !== '' &&
       userState.password !== ''
-    ) {
+      ) {
 
       UserAPI.login(userState)
         .then(({ data: token }) => {
 
           if (!token) {
-
+            
             UserAPI.register(userState)
               .then(({ data }) => {
                 setSuccess(true)

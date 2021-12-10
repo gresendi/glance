@@ -6,9 +6,9 @@ import { useState, useEffect } from 'react'
 
 
 
-const PhotoCard = ({name, location}) => {
+const PhotoCard = ({ name, location, userLink, unslpashLink}) => {
   
-
+console.log(name)
   
 
 
@@ -18,8 +18,8 @@ const PhotoCard = ({name, location}) => {
     
        
         <Col className='bottomLeft' sm={4}>
-      <p className='name'>Photo by <a className='name' href='https://google.com'>{name}</a></p>
-      <p > <a className='name' href='https://google.com'>Unsplash</a></p>
+      <p className='name'>Photo by <a className='name' href={userLink}>{name}</a></p>
+      <p > <a className='name' href={unslpashLink}>Unsplash</a></p>
         </Col>
        
       
