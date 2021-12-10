@@ -6,9 +6,11 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
 
 const Weather = () => {
-
+  if(!localStorage.getItem('city')){
+    localStorage.setItem('city', 'Anaheim')
+  }
   const [card, setCard] = useState(false)
-  let [city, setCity] = useState(localStorage.getItem('city'))
+  let [city, setCity] = useState( localStorage.getItem('city') )
   const [name, setName] = useState(localStorage.getItem('city'));
   
   useEffect(() => {
