@@ -8,7 +8,10 @@ const User = new Schema({
     required: true,
     match: /.+\@.+\..+/,
     unique: true
-  }
+  },
+  links:[{
+    type: String
+  }]
   
   
 })
