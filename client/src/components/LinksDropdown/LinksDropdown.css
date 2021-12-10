@@ -7,11 +7,17 @@
 }
 
 .links {
-    background: transparent!;
+    background: red!;
+    margin: 1rem;
+   
 }
 
 .btn-primary {
     color: #fff;
     background-color: transparent;
    border-color:transparent;
+}
+
+.btn-success{
+    background-color: transparent!;
 }

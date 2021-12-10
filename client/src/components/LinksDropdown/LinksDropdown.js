@@ -41,7 +41,7 @@ const LinksDropdown = () => {
         },
     );
     const popover = (
-        <Popover id="popover-basic">
+        <Popover style={{ backgroundColor: 'white', color: "black"}} id="popover-basic" className='links btn-success'>
             {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
             <Popover.Body>
 
@@ -67,7 +67,7 @@ const LinksDropdown = () => {
                     <Button variant="success" className='links'>+</Button>
                                 </Col>
 
-                    </Row> : <Button variant="success" className='links' onClick ={()=>handleAddLink()}>+</Button>
+                    </Row> : <Button variant="success" className='links ' onClick ={()=>handleAddLink()}>+</Button>
                }
                 
                 
@@ -85,7 +85,7 @@ const LinksDropdown = () => {
                 <OverlayTrigger trigger="click" placement="right" overlay={popover}>
                     <Button variant="success" className='links'>Links</Button>
                 </OverlayTrigger>
-                 <Dropdown className="d-inline mx-2 links" autoClose="inside">
+                 {/* <Dropdown className="d-inline mx-2 links" autoClose="inside">
     <Dropdown.Toggle id="dropdown-autoclose-inside">
       Links
     </Dropdown.Toggle>
@@ -93,7 +93,7 @@ const LinksDropdown = () => {
                         
                        
                     </Dropdown.Menu>
-    </Dropdown>
+    </Dropdown> */}
 
         </div>
         </>
