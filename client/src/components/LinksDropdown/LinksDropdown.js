@@ -18,8 +18,13 @@ const LinksDropdown = () => {
                 link: "https://react-bootstrap.netlify.app/components/alerts/"
             }
         
-        ]
+        ],
+        addUrl: false
     })
+    const handleAddLink = () =>{
+        console.log('clicking add link')
+        setLinks({...links, addUrl: true})
+    }
 
     const UpdatingPopover = forwardRef(
         ({ popper, children, show: _, ...props }, ref) => {
@@ -37,7 +42,7 @@ const LinksDropdown = () => {
     );
     const popover = (
         <Popover id="popover-basic">
-            <Popover.Header as="h3">Popover right</Popover.Header>
+            {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
             <Popover.Body>
 
                 {
@@ -46,10 +51,8 @@ const LinksDropdown = () => {
                     ))
 
                 }
-               
-                
-                
-                    <Row>
+               {
+                    links.addUrl ? <Row>
                         <Col className ='col-9'>
                         <InputGroup className="mt-2">
                             <FormControl
@@ -63,7 +66,13 @@ const LinksDropdown = () => {
                     <Col className= 'col-1 mt-2'>
                     <Button variant="success" className='links'>+</Button>
                                 </Col>
-                    </Row>
+
+                    </Row> : <Button variant="success" className='links' onClick ={()=>handleAddLink()}>+</Button>
+               }
+                
+                
+                    
+                
                 
             </Popover.Body>
         </Popover>
