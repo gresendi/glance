@@ -1,14 +1,14 @@
 import './LinksDropdown.css'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Overlay from 'react-bootstrap/Overlay'
-import {Popover, OverlayTrigger, Button, InputGroup, FormControl, Row, Col} from 'react-bootstrap/'
-import {forwardRef, useEffect, useState} from 'react'
+import { Popover, OverlayTrigger, Button, InputGroup, FormControl, Row, Col } from 'react-bootstrap/'
+import { forwardRef, useEffect, useState } from 'react'
 
 const LinksDropdown = () => {
 
 
-    const [links, setLinks]= useState({
-        url:[
+    const [links, setLinks] = useState({
+        url: [
             {
                 linkName: 'Google',
                 link: "https://www.google.com/"
@@ -17,13 +17,17 @@ const LinksDropdown = () => {
                 linkName: 'React Booststrap',
                 link: "https://react-bootstrap.netlify.app/components/alerts/"
             }
-        
+
         ],
-        addUrl: false
+        addUrl: false,
+        newLink:{
+            name: '',
+            link: ''
+        }
     })
-    const handleAddLink = () =>{
+    const handleAddLink = () => {
         console.log('clicking add link')
-        setLinks({...links, addUrl: true})
+        setLinks({ ...links, addUrl: true })
     }
 
     const UpdatingPopover = forwardRef(
@@ -41,51 +45,63 @@ const LinksDropdown = () => {
         },
     );
     const popover = (
-        <Popover style={{ backgroundColor: 'white', color: "black"}} id="popover-basic" className='links btn-success'>
+        <Popover style={{ backgroundColor: 'white', color: "black" }} id="popover-basic" className='links '>
             {/* <Popover.Header as="h3">Popover right</Popover.Header> */}
             <Popover.Body>
 
                 {
-                    links.url.map(link=>(
-                        <Dropdown.Item href={link.link}>{link.linkName}</Dropdown.Item>
+                    links.url.map(link => (
+                        <Dropdown.Item href={link.link} className=''>{link.linkName}</Dropdown.Item>
                     ))
 
                 }
-               {
+                {
                     links.addUrl ? <Row>
-                        <Col className ='col-9'>
-                        <InputGroup className="mt-2">
-                            <FormControl
-                                placeholder="Add Link"
-                                aria-label="link"
-                                aria-describedby="link"
-                                />
-                        
-                        </InputGroup>
-                                </Col>
-                    <Col className= 'col-1 mt-2'>
-                    <Button variant="success" className='links'>+</Button>
-                                </Col>
+                        <Col className='col-9'>
 
-                    </Row> : <Button variant="success" className='links ' onClick ={()=>handleAddLink()}>+</Button>
-               }
-                
-                
-                    
-                
-                
+                            <InputGroup className="mt-2">
+                                <FormControl
+                                    placeholder="Add Link Name"
+                                    aria-label="link"
+                                    aria-describedby="link"
+                                />
+
+                            </InputGroup>
+                            <InputGroup className="mt-2">
+                                <FormControl
+                                    placeholder="Add Link"
+                                    aria-label="link"
+                                    aria-describedby="link"
+                                />
+
+                            </InputGroup>
+
+
+
+                        </Col>
+                        <Col className='col-3 m-0 '>
+                            <Button  className ='links'>+</Button>
+                        </Col>
+
+                    </Row> : <Button  className=' links' onClick={() => handleAddLink()}>+</Button>
+                }
+
+
+
+
+
             </Popover.Body>
         </Popover>
     );
 
 
     return (
-        <> 
+        <>
             <div className="linkContainer">
                 <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                    <Button variant="success" className='links'>Links</Button>
+                    <Button  className=' linkButton'>Links</Button>
                 </OverlayTrigger>
-                 {/* <Dropdown className="d-inline mx-2 links" autoClose="inside">
+                {/* <Dropdown className="d-inline mx-2 links" autoClose="inside">
     <Dropdown.Toggle id="dropdown-autoclose-inside">
       Links
     </Dropdown.Toggle>
@@ -95,7 +111,7 @@ const LinksDropdown = () => {
                     </Dropdown.Menu>
     </Dropdown> */}
 
-        </div>
+            </div>
         </>
     )
 }

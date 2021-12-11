@@ -1,7 +1,7 @@
  .box {
    width: 100%;
    min-height: 100vh;
-   background-image: url('https://momentum.photos/img/c8c70e92-d705-4279-932b-2c30ed62da2c.jpg?momo_cache_bg_uuid=417561a5-f0a3-4655-99a1-42f5c8e297c8 ');
+   background:white;
    justify-content: center;
    background-repeat: no-repeat;
    background-attachment: fixed;

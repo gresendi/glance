@@ -7,17 +7,54 @@
 }
 
 .links {
-    background: red!;
-    margin: 1rem;
-   
+    background-color: #0d6efd;
+    border-color: transparent;
+    margin-top: .5rem;
+}
+
+.links:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.links:visited {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    margin-top: .5rem;
+}
+
+.links:active {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
 }
 
 .btn-primary {
     color: #fff;
-    background-color: transparent;
-   border-color:transparent;
+    background-color: #0d6efd;
+    border-color: transparent;
 }
 
-.btn-success{
+.btn-success {
     background-color: transparent!;
+}
+
+.linkButton {
+    font-size: 15pt;
+    margin-top: .5rem;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.linkButton :hover {
+    font-size: 15pt;
+    margin-top: .5rem;
+    background-color: #0d6efd;
+    border-color: transparent;
+}
+
+.linkButton :active {
+    font-size: 15pt;
+    margin-top: .5rem;
+    background-color: #0d6efd;
+    border-color: transparent;
 }
