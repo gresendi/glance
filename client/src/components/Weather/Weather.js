@@ -14,18 +14,14 @@ const Weather = () => {
   const [name, setName] = useState(localStorage.getItem('city'));
   
   useEffect(() => {
-
-
     weather(city)
     console.log("Search message inside useEffect: ", name);
-
   }, [name])
 
 
 
   const weather = () => {
-    let name = localStorage.getItem('city')
-    
+    let name = localStorage.getItem('city') 
     WeatherApi.getLocalWeather(name)
       .then((res) => {
         setCard(res)
@@ -36,9 +32,7 @@ const Weather = () => {
 
 
   const changeCity=(name)=> {
-    
     localStorage.setItem('city',name)
-    
 }
 
 const handleChange =(e)=>{

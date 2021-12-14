@@ -65,10 +65,10 @@ const RegisterForm = () => {
       userState.username !== '' &&
       userState.password !== ''
       ) {
-
+        console.log(userState)
       UserAPI.login(userState)
         .then(({ data: token }) => {
-
+          
           if (!token) {
             
             UserAPI.register(userState)

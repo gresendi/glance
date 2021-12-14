@@ -3,31 +3,86 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import Overlay from 'react-bootstrap/Overlay'
 import { Popover, OverlayTrigger, Button, InputGroup, FormControl, Row, Col } from 'react-bootstrap/'
 import { forwardRef, useEffect, useState } from 'react'
-
+import LinkAPI from '../../utils/LinkAPI'
 const LinksDropdown = () => {
 
 
     const [links, setLinks] = useState({
-        url: [
-            {
-                linkName: 'Google',
-                link: "https://www.google.com/"
-            },
-            {
-                linkName: 'React Booststrap',
-                link: "https://react-bootstrap.netlify.app/components/alerts/"
-            }
-
-        ],
+        url: [],
         addUrl: false,
-        newLink:{
-            name: '',
-            link: ''
-        }
+        
+        name: '',
+        link: ''
+        
     })
+    const [missingInput, setMissingInput] = useState({
+        missingName: false,
+        missingLink: false
+    })
+
+    const handleInputChange = ({ target: { name, value } }) => {
+
+        // Change the state of missing input dynamically on input change.
+        if (name === 'name') {
+            setMissingInput({ ...missingInput, missingName: false })
+        }
+        else if (name === 'link') {
+            setMissingInput({ ...missingInput, missingLink: false })
+            
+        }
+
+        setLinks({ ...links, [name]: value })
+
+    }
+    useEffect(()=>{
+        LinkAPI.getLinks()
+            .then(({ data }) => {
+                setLinks({ ...links, url: data })
+            })
+    },[])
+
+    
+   
     const handleAddLink = () => {
         console.log('clicking add link')
         setLinks({ ...links, addUrl: true })
+    }
+
+    const handleAddNewLink=event=>{
+        if(event){
+            event.preventDefault()
+        }
+        if(links.name !='' && links.link != ''){
+
+
+            let newLink = {
+                 linkName :links.name,
+                 link :links.link
+                }
+            
+            let newLinks = links.url
+            newLinks.push(newLink)
+            setLinks({ ...links,url:newLinks, name: '', link: '', addUrl: false })
+                
+            LinkAPI.create(newLink)
+            .then((res)=>{
+                console.log('link created')
+            })
+            .catch(err=>console.log(err))
+
+
+
+
+        }else{
+            if(links.name = ' '){
+                setMissingInput({...missingInput, missingName:true})
+            }
+            if (links.link = ' ') {
+                setMissingInput({ ...missingInput, missinglink: true })
+            }
+        }
+            
+        
     }
 
     const UpdatingPopover = forwardRef(
@@ -62,9 +117,13 @@ const LinksDropdown = () => {
                             <InputGroup className="mt-2">
                                 <FormControl
                                     placeholder="Add Link Name"
-                                    aria-label="link"
-                                    aria-describedby="link"
+                                    aria-label="name"
+                                    aria-describedby="name"
+                                    name ='name'
+                                    value={links.name}
+                                    onChange={handleInputChange}
                                 />
+                                {(missingInput.missingName ) ? <p className="err mt-2">⚠️ Please enter a name for the link</p> : <></>}
 
                             </InputGroup>
                             <InputGroup className="mt-2">
@@ -72,6 +131,9 @@ const LinksDropdown = () => {
                                     placeholder="Add Link"
                                     aria-label="link"
                                     aria-describedby="link"
+                                    name='link'
+                                    value = {links.link}
+                                    onChange={handleInputChange}
                                 />
 
                             </InputGroup>
@@ -80,7 +142,7 @@ const LinksDropdown = () => {
 
                         </Col>
                         <Col className='col-3 m-0 '>
-                            <Button  className ='links'>+</Button>
+                            <Button className='links' onClick={handleAddNewLink}>+</Button>
                         </Col>
 
                     </Row> : <Button  className=' links' onClick={() => handleAddLink()}>+</Button>

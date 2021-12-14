@@ -18,7 +18,7 @@ router.get('/users/:email', (req, res) => {
 // Create a new user.
 router.post('/users/register', (req, res) => {
   const { first_name, last_name, username,  password } = req.body
-  
+  console.log(req.body )
   // Use mongoose to create new instance of a user with passpost authentication.
   User.register(new User({ first_name, last_name, username }), password, err => {
     if (err) {

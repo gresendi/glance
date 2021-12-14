@@ -10,7 +10,8 @@ const User = new Schema({
     unique: true
   },
   links:[{
-    type: String
+    type: Schema.Types.ObjectId,
+    ref: 'Link'
   }]
   
   
