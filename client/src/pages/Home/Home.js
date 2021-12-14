@@ -85,13 +85,13 @@ const Home = () => {
     <Container fluid className='box'
       style={sectionStyle}>
       <Row className='top-row fixed-top'>
-        <Col sm={4}>
+        <Col>
           <LinksDropdown></LinksDropdown>
         </Col>
-        <Col sm={4}>
-          { }
+        <Col>
+          <Row></Row>
         </Col>
-        <Col sm={4}>
+        <Col >
           <Weather></Weather>
         </Col>
       </Row>
