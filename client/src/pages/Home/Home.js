@@ -133,7 +133,7 @@ const Home = () => {
 
       </Row>
       <Row className='bottom-row fixed-bottom'>
-        <Col >
+        <Col className='bottom-row-left' >
           {/* settings */}
           {/* photo info/ next image */}
           <PhotoCard
@@ -146,10 +146,7 @@ const Home = () => {
 
 
 
-        <Col >
-         
-        </Col>
-        <Col>
+        <Col className='bottom-row-right'>
         <ToDo></ToDo>
         </Col>
       </Row>

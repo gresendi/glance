@@ -16,11 +16,12 @@ console.log(name)
 
   return (
     
-       
-        <Col className='bottomLeft' sm={4}>
-      <p className='name'>Photo by <a className='name' href={userLink}>{name}</a></p>
+       <div className='bottom-left'>
+        
+    <a className='name' href={userLink}>Photo by {' '} {name}</a>
       <p > <a className='name' href={unslpashLink}>Unsplash</a></p>
-        </Col>
+       
+       </div>
        
       
 

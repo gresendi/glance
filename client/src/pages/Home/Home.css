@@ -1,7 +1,7 @@
  .box {
    width: 100%;
    min-height: 100vh;
-   background:white;
+   background: white;
    justify-content: center;
    background-repeat: no-repeat;
    background-attachment: fixed;
@@ -21,7 +21,7 @@
    width: 100%;
    min-height: 20vh;
    justify-content: center;
-   
+
  }
 
  .center {
@@ -43,7 +43,21 @@
 
  .bottom-row {
    width: 100%;
+   display: flex;
    min-height: 10vh;
-   justify-content: center;
+   justify-content: end;
+   align-items: first-baseline;
 
+ }
+
+ .bottom-row-right {
+   display: flex;
+   flex-direction: row-reverse;
+   align-self: flex-end
+ }
+
+ .bottom-row-left {
+   display: flex;
+   flex-direction: row;
+   align-self: flex-end;
  }

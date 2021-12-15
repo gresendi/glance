@@ -2,16 +2,13 @@
   font-variant: small-caps;
   color: white;
   font-size: 15px;
-  padding: 0;
-  margin-bottom: 0;
+  display: flex;
+  padding-bottom: 0;
+
 }
 
-.bottomLeft {
-  padding-left: 2rem;
-  padding-bottom: 1rem;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.bottom-left {
+  margin-left: 1rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -19,11 +16,12 @@
     bottom: 0;
     width: 100vw;
     height: 5rem;
-    font-size:7px;
+    font-size: 7px;
   }
+
   .name {
     font-size: 12px;
   }
-  
- 
+
+
 }
