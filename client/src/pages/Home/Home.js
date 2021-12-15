@@ -12,7 +12,7 @@ import PhotoCard from '../../components/PhotoCard';
 import './Home.css'
 import Quote from '../../components/Quote'
 import UserAPI from '../../utils/UserAPI';
-
+import ToDo from '../../components/ToDo'
 const Home = () => {
   const [background, setBackground] = useState({
     url: '',
@@ -149,7 +149,9 @@ const Home = () => {
         <Col >
          
         </Col>
-        <Col></Col>
+        <Col>
+        <ToDo></ToDo>
+        </Col>
       </Row>
 
 
