@@ -1,13 +1,22 @@
 .clock {
   color: white;
   z-index: 2;
-  opacity: 60;
   font-size: 120px;
   line-height: 1.5rem;
-  
+  min-height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
-  min-height: 20vh;
+
+}
+
+@media screen and (max-width: 600px) {
+  .clock {
+
+    font-size: 75px;
+  }
+
+
+
 
 }

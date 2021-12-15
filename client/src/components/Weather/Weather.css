@@ -30,7 +30,24 @@
   color: black;
 }
 
-.cityTitle{
+.cityTitle {
   font-size: 15pt;
   margin-top: 1rem;
+
+}
+
+
+@media screen and (max-width: 600px) {
+
+
+  .weather {
+    font-size: 12pt;
+  }
+
+  .cityTitle {
+    font-size: 13pt;
+    margin-top: 1rem;
+
+  }
+
 }

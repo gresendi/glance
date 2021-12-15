@@ -21,6 +21,7 @@
    width: 100%;
    min-height: 20vh;
    justify-content: center;
+   
  }
 
  .center {
@@ -35,7 +36,7 @@
    min-height: 20vh;
    position: absolute;
    bottom: 0;
-   padding: 2rem;
+   padding-bottom: 3rem;
    margin-bottom: 1rem;
 
  }

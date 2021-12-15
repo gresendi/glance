@@ -64,6 +64,7 @@ const Home = () => {
       UserAPI.getUser()
         .then(({ data }) => {
           console.log(data)
+          setUser(data)
         })
     }
 
@@ -98,22 +99,35 @@ const Home = () => {
       <Row className='top-center'>
 
       </Row>
-      <Row className='center fl' >
-      <Col>
+      <Row className='center ' >
+        <Col sm={1}>
+        </Col>
+      <Col sm={10}>
         <Clock></Clock>
+        {user.first_name? 
         <Greeting
-          name='Gilberto'
-          ></Greeting>
+        name={user.first_name}
+        ></Greeting>:<></>
+      }
           </Col>
+          <Col sm={1}></Col>
 
       </Row>
-      <Row className='bottom-center  fixed-bottom'>
-        <Stack
-          direction='vertical'
-        >
-          <Quote
-            quote='quote'></Quote>
-        </Stack>
+      <Row className='bottom-center  '>
+        
+        <Col sm={1}>
+
+        </Col>
+        <Col sm={10}>
+          
+            <Quote
+              quote='quote'></Quote>
+         
+        </Col>
+        <Col sm={1}>
+
+        </Col>
+       
 
 
 
@@ -133,8 +147,9 @@ const Home = () => {
 
 
         <Col >
-
+         
         </Col>
+        <Col></Col>
       </Row>
 
 

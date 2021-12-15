@@ -7,9 +7,23 @@
 }
 
 .bottomLeft {
-  padding-left:2rem;
-  padding-bottom:1rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .bottomLeft {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+    font-size:7px;
+  }
+  .name {
+    font-size: 12px;
+  }
+  
+ 
 }

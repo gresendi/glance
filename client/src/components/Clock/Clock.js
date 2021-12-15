@@ -20,7 +20,7 @@ const Clock = () =>{
 
   return (
     <Col
-      md="auto"
+      
       className='clock'
     >
       {clock}
