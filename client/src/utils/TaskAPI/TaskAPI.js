@@ -18,6 +18,16 @@ const TaskAPI = {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     }
   }),
+  getTask: id => axios.get(`/api/tasks/${id}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  }),
+  update: (id,task) => axios.put(`api/tasks/${id}`, task, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+  } )
 
 }
 

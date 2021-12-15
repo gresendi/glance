@@ -29,6 +29,16 @@ router.delete('/tasks/:id', passport.authenticate('jwt'), async function (req, r
   await User.findByIdAndUpdate(req.user._id, { $pull: { tasks: req.params.id } })
   res.sendStatus(200)
 })
+router.get('/tasks/:id', passport.authenticate('jwt'), async function(req,res){
+  let task = await Task.findById(req.params.id)
+  res.json(task)
+})
+router.put('/tasks/:id', passport.authenticate('jwt'), async function (req, res) {
+  // find item by it then set the passed in p
+  console.log(req.body)
+  await Task.findByIdAndUpdate(req.params.id, { $set: req.body })
+  res.sendStatus(200)
+})
 
 
 module.exports = router
