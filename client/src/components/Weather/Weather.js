@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'react-bootstrap/Image'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Popover from 'react-bootstrap/Popover'
-
+import { InputGroup, FormControl } from 'react-bootstrap/'
 const Weather = () => {
   if(!localStorage.getItem('city')){
     localStorage.setItem('city', 'Anaheim')
@@ -61,20 +61,25 @@ const handleChange =(e)=>{
             <Popover id={`popover-positioned'bottom`}>
               <Popover.Header as="h3">{`Change City`}</Popover.Header>
               <Popover.Body>
-                <form>
-
-                  <input
-                    type="text"
+                
+                <InputGroup className="mt-2">
+                  <FormControl
+                    placeholder="Add new task"
+                    aria-label="task"
+                    aria-describedby="task"
+                    name='city'
                     value={name}
-                    className="cityContainer"
                     onChange={(e) => {
                       handleChange(e)
-                    
+
                     }}
+                    
                   />
                   
 
-                </form>
+                </InputGroup>
+
+
                 
               </Popover.Body>
             </Popover>
