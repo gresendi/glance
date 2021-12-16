@@ -56,17 +56,22 @@ const ToDo = () => {
 
 
       let newTask = {
+
         task: tasks.task,
         isDone: false,
         location: 'today'
       }
 
       let newTasks = tasks.tasks
-      newTasks.push(newTask)
-      setTasks({ ...tasks, tasks: newTasks, task: '', addTask: false })
+     
+      
 
       TaskAPI.create(newTask)
-        .then((res) => {
+        .then(({data}) => {
+          console.log(data._id)
+          newTask._id=data._id
+          newTasks.push(newTask)
+          setTasks({ ...tasks, tasks: newTasks, task: '', addTask: false })
           console.log('task created')
         })
         .catch(err => console.log(err))
