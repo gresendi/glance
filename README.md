@@ -64,10 +64,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Future Goals
 
-- A single UI on applicant side between jobs the applicant creates and jobs employers post.
-  - Currently A drag and drop feature is available to manage jobs where employers don't use Jofer and jobs posted by employers are listed below.  Future state goals are to combine the two, where job updates from employers are managed in the drag and drop feature from the applicant side.
-- When an applicant creates an account the are promted to fill out a digital resume, and have the ability to update it (skills, experience, etc.) via a profile page.
-- Ability for employers to post jobs, and have posted jobs be on the home page for applicants to scroll through, solidifying end-to-end application process through Jofer.
-- Incorporate AI into decline process to learn applicants resume, and compare it to what the employer is looking for to give even more custom decline responses.
-- Incorporate more automation into the salary negotiator to allow an alogorythm to handle negoatiations based on company data.
-- Set an alert if an applicant has been in the review stage for too long.
+- Ability to create folders for url links
+- Ability to create folders for tasks for better managment
+- Ability to add additional info/ checklists to tasks, further expanding their functionality
+- Ability to see weekly forecast 
+- Ability to change background on click, and store favorited backgrounds
